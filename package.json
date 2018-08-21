@@ -1,0 +1,27 @@
+{
+  "name": "json-multilevel-delta",
+  "version": "0.0.1",
+  "description": "A small delta calculator of two json objects (files)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianroming/json-multilevel-delta.git"
+  },
+  "keywords": [
+    "json",
+    "object",
+    "delta",
+    "calculator",
+    "diff",
+    "difference"
+  ],
+  "author": "Sebastian Roming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastianroming/json-multilevel-delta/issues"
+  },
+  "homepage": "https://github.com/sebastianroming/json-multilevel-delta#readme"
+}
