@@ -22,9 +22,8 @@ module.exports = (obj1, obj2) => {
       deltaKeys = [];
 
   objects.forEach((obj, idx) => {
-    let otherIndex = (idx === 0) ? 1 : 0;
     obj.forEach((key) => {
-      if (!objects[otherIndex].includes(key)) {
+      if (!objects[(idx === 0) ? 1 : 0].includes(key)) {
         deltaKeys.push(key);
       }
     });
