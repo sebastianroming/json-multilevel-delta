@@ -2,9 +2,10 @@
   "name": "json-multilevel-delta",
   "version": "0.0.1",
   "description": "A small delta calculator of two json objects (files)",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,23 @@
     "diff",
     "difference"
   ],
-  "author": "Sebastian Roming",
-  "license": "MIT",
+  "author": {
+    "name": "Sebastian Roming",
+    "email": "sebastian@webmonkey.io",
+    "url": "https://webmonkey.io"
+  },
   "bugs": {
     "url": "https://github.com/sebastianroming/json-multilevel-delta/issues"
   },
-  "homepage": "https://github.com/sebastianroming/json-multilevel-delta#readme"
+  "homepage": "https://github.com/sebastianroming/json-multilevel-delta#readme",
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "space": true
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
+  }
 }
