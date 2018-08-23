@@ -1,6 +1,8 @@
 'use strict';
 /* eslint-disable array-callback-return, guard-for-in */
 
+const _ = require('lodash.get');
+
 const getDeepKeys = obj => {
   let keys = [];
   for (const key in obj) {
@@ -17,7 +19,7 @@ const getDeepKeys = obj => {
   return keys;
 };
 
-module.exports = (obj1, obj2) => {
+const jsonMultilevelDelta = (obj1, obj2) => {
   const objects = [getDeepKeys(obj1), getDeepKeys(obj2)];
   const deltaKeys = [];
 
@@ -30,4 +32,32 @@ module.exports = (obj1, obj2) => {
   });
 
   return deltaKeys;
+};
+
+const stringToObj = (path, value, obj) => {
+  const parts = path.split('.');
+  const last = parts.pop();
+  let part = null;
+
+  while (parts.length) {
+    part = parts.shift();
+    if (typeof obj[part] !== 'object') {
+      obj[part] = {};
+    }
+    obj = obj[part];
+  }
+  obj[last] = value;
+};
+
+module.exports = (obj1, obj2) => jsonMultilevelDelta(obj1, obj2);
+module.exports.json = (obj1, obj2) => {
+  const keys = jsonMultilevelDelta(obj1, obj2);
+
+  const jsonObj = {};
+  keys.forEach(key => {
+    const value = (typeof _(obj1, key) === 'undefined') ? _(obj2, key) : _(obj1, key);
+    stringToObj(key, value, jsonObj);
+  });
+
+  return jsonObj;
 };
