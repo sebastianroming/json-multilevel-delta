@@ -9,7 +9,7 @@ npm install --save json-multilevel-delta
 
 
 ## Usage
-```
+```js
 const jsonMultilevelDelta = require('json-multilevel-delta');
 
 const objectA = { 'a': 'b', 'foo': { 'bar': 'baz', 'lorem': 'ipsum' } };
