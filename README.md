@@ -19,13 +19,7 @@ jsonMultilevelDelta(objectA, objectB);
 // => [ 'a', 'foo.lorem', 'c' ]
 
 jsonMultilevelDelta.json(objectA, objectB);
-// {
-//   'a': 'b',
-//   'foo': {
-//     'lorem': 'ipsum'
-//   },
-//   'c': 'd'
-// }
+// => { 'a': 'b', 'foo': { 'lorem': 'ipsum' }, 'c': 'd' }
 ```
 
 ## License
